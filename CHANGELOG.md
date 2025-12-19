@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-11-21)
+## Unreleased (2025-12-19)
 
 <section class="features">
 
@@ -16,12 +16,23 @@
 
 <!-- /.features -->
 
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`a0191a5`](https://github.com/stdlib-js/stdlib/commit/a0191a5c95f5f40d8247e1e5679812aef0d81b1c) - ensure sentinel value is passed through
+
+</section>
+
+<!-- /.bug-fixes -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`a0191a5`](https://github.com/stdlib-js/stdlib/commit/a0191a5c95f5f40d8247e1e5679812aef0d81b1c) - **fix:** ensure sentinel value is passed through _(by Athan Reines)_
 -   [`67f4feb`](https://github.com/stdlib-js/stdlib/commit/67f4feb3b59fc5466e8302977634d3d5113467a8) - **style:** remove space _(by Athan Reines)_
 -   [`f8c51b3`](https://github.com/stdlib-js/stdlib/commit/f8c51b3a7653d158c23babe3b0986bb20b8b4029) - **feat:** add `ndarray/find` [(#4398)](https://github.com/stdlib-js/stdlib/pull/4398) _(by Gururaj Gurram, Athan Reines, stdlib-bot, Muhammad Haris)_
 

@@ -41,7 +41,25 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-find
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
@@ -49,32 +67,8 @@ limitations under the License.
 
 <!-- eslint-disable no-redeclare -->
 
-To use in Observable,
-
 ```javascript
-find = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var find = require( 'path/to/vendor/umd/ndarray-find/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.find;
-})();
-</script>
+var find = require( '@stdlib/ndarray-find' );
 ```
 
 <!-- eslint-enable no-redeclare -->
@@ -115,7 +109,7 @@ The function accepts the following options:
 
 -   **dims**: list of dimensions over which to perform a reduction.
 -   **keepdims**: boolean indicating whether the reduced dimensions should be included in the returned [ndarray][@stdlib/ndarray/ctor] as singleton dimensions. Default: `false`.
--   **sentinelValue**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
+-   **sentinel**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
 
 By default, the function performs reduction over all all elements in a provided [ndarray][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
@@ -170,7 +164,7 @@ var v = ndarray2array( out );
 // returns [ [ [ NaN, 2 ], [ NaN, 4 ] ] ]
 ```
 
-To specify a custom sentinel value to return when no element passes the test, set the `sentinelValue` option.
+To specify a custom sentinel value to return when no element passes the test, set the `sentinel` option.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
@@ -185,7 +179,7 @@ var x = array( [ [ [ 1.0, 3.0 ], [ 5.0, 7.0 ] ], [ [ 9.0, 11.0 ], [ 13.0, 15.0 ]
 // returns <ndarray>
 
 var opts = {
-    'sentinelValue': -999
+    'sentinel': -999
 };
 
 // Perform reduction:
@@ -271,7 +265,7 @@ The function accepts the following arguments:
 The function accepts the following options:
 
 -   **dims**: list of dimensions over which to perform a reduction.
--   **sentinelValue**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
+-   **sentinel**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
@@ -313,7 +307,7 @@ var v = ndarray2array( y );
 
 ## Notes
 
--   By default, when no `sentinelValue` is provided, the function returns a default sentinel value based on the input [ndarray][@stdlib/ndarray/ctor] [data-type][@stdlib/ndarray/dtypes]:
+-   By default, when no `sentinel` is provided, the function returns a default sentinel value based on the input [ndarray][@stdlib/ndarray/ctor] [data-type][@stdlib/ndarray/dtypes]:
 
     -   real-valued floating-point data types: `NaN`.
     -   complex-valued floating-point data types: `NaN + NaNj`.
@@ -336,14 +330,9 @@ var v = ndarray2array( y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-positive-number@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.isPrimitive;
+```javascript
+var uniform = require( '@stdlib/random-uniform' );
+var isPositive = require( '@stdlib/assert-is-positive-number' ).isPrimitive;
 var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var find = require( '@stdlib/ndarray-find' );
 
@@ -354,11 +343,6 @@ console.log( ndarray2array( x ) );
 
 var y = find( x, isPositive );
 console.log( y.get() );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -390,11 +374,6 @@ For more information on the project, filing bug reports and feature requests, an
 
 ---
 
-## License
-
-See [LICENSE][stdlib-license].
-
-
 ## Copyright
 
 Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
@@ -423,8 +402,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -441,11 +420,9 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [esm-readme]: https://github.com/stdlib-js/ndarray-find/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/ndarray-find/blob/main/branches.md
 
-[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-find/main/LICENSE
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
-
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/umd
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
 <!-- <related-links> -->
 

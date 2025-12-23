@@ -109,7 +109,7 @@ The function accepts the following options:
 
 -   **dims**: list of dimensions over which to perform a reduction.
 -   **keepdims**: boolean indicating whether the reduced dimensions should be included in the returned [ndarray][@stdlib/ndarray/ctor] as singleton dimensions. Default: `false`.
--   **sentinelValue**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
+-   **sentinel**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
 
 By default, the function performs reduction over all all elements in a provided [ndarray][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
@@ -164,7 +164,7 @@ var v = ndarray2array( out );
 // returns [ [ [ NaN, 2 ], [ NaN, 4 ] ] ]
 ```
 
-To specify a custom sentinel value to return when no element passes the test, set the `sentinelValue` option.
+To specify a custom sentinel value to return when no element passes the test, set the `sentinel` option.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
@@ -179,7 +179,7 @@ var x = array( [ [ [ 1.0, 3.0 ], [ 5.0, 7.0 ] ], [ [ 9.0, 11.0 ], [ 13.0, 15.0 ]
 // returns <ndarray>
 
 var opts = {
-    'sentinelValue': -999
+    'sentinel': -999
 };
 
 // Perform reduction:
@@ -265,7 +265,7 @@ The function accepts the following arguments:
 The function accepts the following options:
 
 -   **dims**: list of dimensions over which to perform a reduction.
--   **sentinelValue**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
+-   **sentinel**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
@@ -307,7 +307,7 @@ var v = ndarray2array( y );
 
 ## Notes
 
--   By default, when no `sentinelValue` is provided, the function returns a default sentinel value based on the input [ndarray][@stdlib/ndarray/ctor] [data-type][@stdlib/ndarray/dtypes]:
+-   By default, when no `sentinel` is provided, the function returns a default sentinel value based on the input [ndarray][@stdlib/ndarray/ctor] [data-type][@stdlib/ndarray/dtypes]:
 
     -   real-valued floating-point data types: `NaN`.
     -   complex-valued floating-point data types: `NaN + NaNj`.
@@ -374,11 +374,6 @@ For more information on the project, filing bug reports and feature requests, an
 
 ---
 
-## License
-
-See [LICENSE][stdlib-license].
-
-
 ## Copyright
 
 Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
@@ -407,8 +402,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -424,8 +419,6 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [esm-url]: https://github.com/stdlib-js/ndarray-find/tree/esm
 [esm-readme]: https://github.com/stdlib-js/ndarray-find/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/ndarray-find/blob/main/branches.md
-
-[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-find/main/LICENSE
 
 [@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 

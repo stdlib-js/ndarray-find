@@ -41,25 +41,7 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/ndarray-find
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
@@ -68,7 +50,13 @@ To view installation and usage instructions specific to each branch build, be su
 <!-- eslint-disable no-redeclare -->
 
 ```javascript
-var find = require( '@stdlib/ndarray-find' );
+import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
 ```
 
 <!-- eslint-enable no-redeclare -->
@@ -80,7 +68,7 @@ Returns a new [ndarray][@stdlib/ndarray/ctor] containing the first elements whic
 <!-- eslint-disable no-invalid-this, max-len -->
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -114,8 +102,8 @@ The function accepts the following options:
 By default, the function performs reduction over all all elements in a provided [ndarray][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -140,8 +128,8 @@ var v = ndarray2array( out );
 By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [ndarray][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [ndarray][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -167,8 +155,8 @@ var v = ndarray2array( out );
 To specify a custom sentinel value to return when no element passes the test, set the `sentinel` option.
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -195,8 +183,8 @@ To set the `predicate` function execution context, provide a `thisArg`.
 <!-- eslint-disable no-invalid-this -->
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 
 function isEven( value ) {
     this.count += 1;
@@ -227,8 +215,8 @@ var count = ctx.count;
 Finds the first elements which pass a test implemented by a predicate function along one or more [ndarray][@stdlib/ndarray/ctor] dimensions and assigns results to a provided output [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var empty = require( '@stdlib/ndarray-empty' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -268,9 +256,9 @@ The function accepts the following options:
 -   **sentinel**: value to return when no element passes the test. May be either a scalar value or a zero-dimensional [ndarray][@stdlib/ndarray/ctor].
 
 ```javascript
-var array = require( '@stdlib/ndarray-array' );
-var empty = require( '@stdlib/ndarray-empty' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -330,11 +318,16 @@ var v = ndarray2array( y );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var uniform = require( '@stdlib/random-uniform' );
-var isPositive = require( '@stdlib/assert-is-positive-number' ).isPrimitive;
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
-var find = require( '@stdlib/ndarray-find' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@esm/index.mjs';
+var isPositive = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-positive-number' ).isPrimitive;
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
+import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
 
 var x = uniform( [ 2, 4, 5 ], -10.0, 10.0, {
     'dtype': 'float64'
@@ -343,6 +336,10 @@ console.log( ndarray2array( x ) );
 
 var y = find( x, isPositive );
 console.log( y.get() );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -364,7 +361,7 @@ console.log( y.get() );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -427,9 +424,9 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-find/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/esm
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/esm
 
 <!-- <related-links> -->
 

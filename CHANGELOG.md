@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-12-26)
+## Unreleased (2026-01-09)
 
 <section class="features">
 
@@ -44,6 +44,7 @@
 
 <details>
 
+-   [`90021da`](https://github.com/stdlib-js/stdlib/commit/90021dae5b5a3b4fbeb5e2366c71b5ddf2095555) - **chore:** clean-up _(by Athan Reines)_
 -   [`daf2cc8`](https://github.com/stdlib-js/stdlib/commit/daf2cc847c77117f4c5ae4e5e99ae224bb592edc) - **refactor:** add writable parameter to `ndarray/base/spread-dimensions` [(#9370)](https://github.com/stdlib-js/stdlib/pull/9370) _(by Muhammad Haris, Athan Reines)_
 -   [`b760fb5`](https://github.com/stdlib-js/stdlib/commit/b760fb5724fb36fb9ae5b18aaf642b3f25037cec) - **refactor:** rename `sentinelValue` option in `ndarray/find` _(by Muhammad Haris)_
 -   [`a0191a5`](https://github.com/stdlib-js/stdlib/commit/a0191a5c95f5f40d8247e1e5679812aef0d81b1c) - **fix:** ensure sentinel value is passed through _(by Athan Reines)_

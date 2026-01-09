@@ -92,10 +92,7 @@ var x = array( [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ], [ 7.0, 8.0 ] ] 
 
 // Perform reduction:
 var out = find( x, isEven );
-// returns <ndarray>
-
-var v = out.get();
-// returns 2.0
+// returns <ndarray>[ 2.0 ]
 ```
 
 The function accepts the following arguments:
@@ -115,7 +112,6 @@ By default, the function performs reduction over all all elements in a provided 
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -131,17 +127,13 @@ var opts = {
 
 // Perform reduction:
 var out = find( x, opts, isEven );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ [ NaN, 2.0 ], [ NaN, 4.0 ] ]
+// returns <ndarray>[ [ NaN, 2.0 ], [ NaN, 6.0 ] ]
 ```
 
 By default, the function returns an [ndarray][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [ndarray][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [ndarray][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -158,17 +150,13 @@ var opts = {
 
 // Perform reduction:
 var out = find( x, opts, isEven );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ [ [ NaN, 2 ], [ NaN, 4 ] ] ]
+// returns <ndarray>[ [ [ NaN, 2.0 ] ], [ [ NaN, 6.0 ] ] ]
 ```
 
 To specify a custom sentinel value to return when no element passes the test, set the `sentinel` option.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -184,10 +172,7 @@ var opts = {
 
 // Perform reduction:
 var out = find( x, opts, isEven );
-// returns <ndarray>
-
-var v = out.get();
-// returns -999
+// returns <ndarray>[ -999 ]
 ```
 
 To set the `predicate` function execution context, provide a `thisArg`.
@@ -196,7 +181,6 @@ To set the `predicate` function execution context, provide a `thisArg`.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 function isEven( value ) {
     this.count += 1;
@@ -213,10 +197,7 @@ var ctx = {
 
 // Perform reduction:
 var out = find( x, isEven, ctx );
-// returns <ndarray>
-
-var v = out.get();
-// returns 2.0
+// returns <ndarray>[ 2.0 ]
 
 var count = ctx.count;
 // returns 2
@@ -229,6 +210,7 @@ Finds the first elements which pass a test implemented by a predicate function a
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var empty = require( '@stdlib/ndarray-empty' );
+var getDType = require( '@stdlib/ndarray-dtype' );
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -240,18 +222,15 @@ var x = array( [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ], [ 7.0, 8.0 ] ] 
 
 // Create an output ndarray:
 var y = empty( [], {
-    'dtype': x.dtype
+    'dtype': getDType( x )
 });
 
 // Perform reduction:
 var out = find.assign( x, y, isEven );
-// returns <ndarray>
+// returns <ndarray>[ 2.0 ]
 
 var bool = ( out === y );
 // returns true
-
-var v = y.get();
-// returns 2.0
 ```
 
 The function accepts the following arguments:
@@ -270,7 +249,7 @@ The function accepts the following options:
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var empty = require( '@stdlib/ndarray-empty' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var getDType = require( '@stdlib/ndarray-dtype' );
 
 function isEven( value ) {
     return value % 2.0 === 0.0;
@@ -282,7 +261,7 @@ var x = array( [ [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ], [ 7.0, 8.0 ] ] 
 
 // Create an output ndarray:
 var y = empty( [ 2, 2 ], {
-    'dtype': x.dtype
+    'dtype': getDType( x )
 });
 
 var opts = {
@@ -291,12 +270,10 @@ var opts = {
 
 // Perform reduction:
 var out = find.assign( x, y, opts, isEven );
+// returns <ndarray>[ [ NaN, 2.0 ], [ NaN, 6.0 ] ]
 
 var bool = ( out === y );
 // returns true
-
-var v = ndarray2array( y );
-// returns [ [ NaN, 2.0 ], [ NaN, 4.0 ] ]
 ```
 
 </section>
@@ -381,7 +358,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 

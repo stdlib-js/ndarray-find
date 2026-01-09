@@ -44,6 +44,7 @@
 
 <details>
 
+-   [`63e3c0c`](https://github.com/stdlib-js/stdlib/commit/63e3c0c70c31fae2111b4dfb4141a3665bc0dea0) - **test:** add tests to `ndarray/find` [(#9311)](https://github.com/stdlib-js/stdlib/pull/9311) _(by Muhammad Haris, Athan Reines, stdlib-bot)_
 -   [`5149a6b`](https://github.com/stdlib-js/stdlib/commit/5149a6b650b60568bd0df248c2a97a3d8ca2ca87) - **chore:** minor clean-up _(by Philipp Burckhardt)_
 -   [`90021da`](https://github.com/stdlib-js/stdlib/commit/90021dae5b5a3b4fbeb5e2366c71b5ddf2095555) - **chore:** clean-up _(by Athan Reines)_
 -   [`daf2cc8`](https://github.com/stdlib-js/stdlib/commit/daf2cc847c77117f4c5ae4e5e99ae224bb592edc) - **refactor:** add writable parameter to `ndarray/base/spread-dimensions` [(#9370)](https://github.com/stdlib-js/stdlib/pull/9370) _(by Muhammad Haris, Athan Reines)_

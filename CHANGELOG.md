@@ -44,6 +44,7 @@
 
 <details>
 
+-   [`5149a6b`](https://github.com/stdlib-js/stdlib/commit/5149a6b650b60568bd0df248c2a97a3d8ca2ca87) - **chore:** minor clean-up _(by Philipp Burckhardt)_
 -   [`90021da`](https://github.com/stdlib-js/stdlib/commit/90021dae5b5a3b4fbeb5e2366c71b5ddf2095555) - **chore:** clean-up _(by Athan Reines)_
 -   [`daf2cc8`](https://github.com/stdlib-js/stdlib/commit/daf2cc847c77117f4c5ae4e5e99ae224bb592edc) - **refactor:** add writable parameter to `ndarray/base/spread-dimensions` [(#9370)](https://github.com/stdlib-js/stdlib/pull/9370) _(by Muhammad Haris, Athan Reines)_
 -   [`b760fb5`](https://github.com/stdlib-js/stdlib/commit/b760fb5724fb36fb9ae5b18aaf642b3f25037cec) - **refactor:** rename `sentinelValue` option in `ndarray/find` _(by Muhammad Haris)_
@@ -61,11 +62,12 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Gururaj Gurram
 -   Muhammad Haris
+-   Philipp Burckhardt
 
 </section>
 

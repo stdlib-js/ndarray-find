@@ -50,13 +50,13 @@ limitations under the License.
 <!-- eslint-disable no-redeclare -->
 
 ```javascript
-import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
+import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@v0.1.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@v0.1.0-esm/index.mjs';
 ```
 
 <!-- eslint-enable no-redeclare -->
@@ -304,7 +304,7 @@ var bool = ( out === y );
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-uniform@esm/index.mjs';
 var isPositive = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-positive-number' ).isPrimitive;
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@esm/index.mjs';
+import find from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-find@v0.1.0-esm/index.mjs';
 
 var x = uniform( [ 2, 4, 5 ], -10.0, 10.0, {
     'dtype': 'float64'

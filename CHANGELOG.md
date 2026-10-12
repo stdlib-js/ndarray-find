@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-10-05)
+## Unreleased (2026-10-12)
+
+<section class="features">
+
+### Features
+
+-   [`2f63119`](https://github.com/stdlib-js/stdlib/commit/2f6311946a3be5d683c91f74553f3c473f8f77fb) - add float16 dtype support to `ndarray/find` [(#15867)](https://github.com/stdlib-js/stdlib/pull/15867)
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,7 @@
 
 <details>
 
+-   [`2f63119`](https://github.com/stdlib-js/stdlib/commit/2f6311946a3be5d683c91f74553f3c473f8f77fb) - **feat:** add float16 dtype support to `ndarray/find` [(#15867)](https://github.com/stdlib-js/stdlib/pull/15867) _(by Samarth Kolarkar)_
 -   [`a0ddbae`](https://github.com/stdlib-js/stdlib/commit/a0ddbae6d3f4bb2b9f95ff2e249202a5d3c95e82) - **docs:** fix description and add missing spaces [(#14202)](https://github.com/stdlib-js/stdlib/pull/14202) _(by Philipp Burckhardt)_
 -   [`cae5335`](https://github.com/stdlib-js/stdlib/commit/cae53357950b4c389b0020878c268995cd79d222) - **docs:** propagate develop fixes to sibling packages [(#12736)](https://github.com/stdlib-js/stdlib/pull/12736) _(by Philipp Burckhardt)_
 -   [`6d6b9d4`](https://github.com/stdlib-js/stdlib/commit/6d6b9d42d8904ca49fb55e2ca464780573886aa0) - **bench:** refactor to use string interpolation in `@stdlib/ndarray` [(#11446)](https:-/github.com/stdlib-js/stdlib/pull/11446) _(by Karan Anand)_
@@ -26,10 +37,11 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Karan Anand
 -   Philipp Burckhardt
+-   Samarth Kolarkar
 
 </section>
 
